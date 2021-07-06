@@ -1,0 +1,11 @@
+In questa cartella sono contenute tutte le interfaccie, realizzate tramite API. Ogni interfaccia contiene tutti prototipi delle API (raggruppate per funzione). L'effetteva esecuzione avviene all'interno dei moduli. I moduli possono essere espostati ed importati nei vari file .js. Per esempio, nel file db_interface (interfaccia per la comunicazione con il database) è presente la seguente line of code: 
+
+<<db.interface>>
+
+var admin = require('./Database_Manager')
+
+
+dove in admin sono definite tutte le implementazioni delle funzioni. In db_interface dovr0 solo chiamarle.
+ 
+
+

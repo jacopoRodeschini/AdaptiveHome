@@ -1,0 +1,70 @@
+src/
+├── app.js
+├── bin
+│   └── www.js
+├── checkConfig.json
+├── IOT-Client
+│   ├── IOT-Client.iml
+│   └── main.py
+├── lib
+│   └── database_manager
+│       ├── adaptivehome-firebase.json
+│       └── database_manager.js
+├── package.json
+├── package-lock.json
+├── public
+│   ├── Image
+│   │   ├── home_1.jpg
+│   │   ├── home.jpeg
+│   │   ├── home_wets.png
+│   │   ├── house-house.png
+│   │   └── SignUp.webp
+│   └── vendors
+│       ├── chart.js
+│       ├── css
+│       ├── Date-Picker
+│       ├── font-awesome
+│       ├── iconfonts  
+│       ├── js
+│       └── mdi
+│          
+├── README
+├── routes
+│   ├── app_interface.js
+│   ├── data_interface.js
+│   ├── hardware_interface.js
+│   ├── routing.js
+│   ├── user_interface.js
+│   └── utils.js
+└── views
+    ├── account.ejs
+    ├── error.ejs
+    ├── home.ejs
+    ├── index.ejs
+    ├── javascripts
+    │   ├── chart.js
+    │   ├── dashboard.js
+    │   ├── misc.js
+    │   └── off-canvas.js
+    ├── pricing.ejs
+    ├── Settings
+    │   └── addfunctions.ejs
+    ├── settings.ejs
+    ├── SignIn.ejs
+    ├── SignUp.ejs
+    ├── stylesheets
+    │   ├── demo_1
+    │   │   ├── style.css
+    │   │   └── style.css.map
+    │   ├── fonts
+    │   │   └── Roboto
+    │   ├── home.css
+    │   └── shared
+    │       ├── style.css
+    │       └── style.css.map
+    └── Template
+        ├── footer.ejs
+        ├── head.ejs
+        └── header.ejs
+
+93 directories, 3455 files

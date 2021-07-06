@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <%- include('../views/Template/head'); %>
+    <!-- Custom styles for this template -->
+    <link href="./views/home.css" rel="stylesheet">
+
+
+    <script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" type = "text/javascript"></script>
+    <link rel="stylesheet" href="/vendors/Date-Picker/build/css/bootstrap-datetimepicker.min.css" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"></script>
+    <script src="/vendors/Date-Picker/build/js/bootstrap-datetimepicker.min.js" type = "text/javascript"></script>
+
+
+<meta name="theme-color" content="#7952b3">
+</head>
+
+<body class="d-flex h-100 text-white bg-dark">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<%- include('../views/Template/header'); %>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Add some others control for our system
+        </h5>
+        <p class="card-text">With this tool tou can add some other controls
+          for your system, select type, name and unique code</p>
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modalFunction">
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+            <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+          </svg>
+          Functions</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Add some others routine over the functions
+        </h5>
+        <p class="card-text">Is easy, with only specify the control functions,
+          start time and period. For every day and time.
+        </p>
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modalRoutine">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+            <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+          </svg>
+          Routine</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Add some others pipe over the functions.
+        </h5>
+        <p class="card-text">This create a rapid command that comunicate in
+          real time with our system.
+        </p>
+        <button type="button" class="btn btn-outline-light btn-lg" >
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+            <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+          </svg>
+          Pipe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Add some others sensors
+        <p class="card-text">Is easy, with only specify the name functions,
+          and type.
+        </p>
+        <button type="button" class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#modalSensor">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-cloud-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z"/>
+            <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
+          </svg>
+          Sensors</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">List of Functions
+        </h5>
+        <p class="card-text">Add more functions</p>
+        <table class="table table-dark table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+          </tr>
+          </thead>
+          <tbody id="tblfun"></tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">List of Routine
+        </h5>
+        <p class="card-text">Add more Routine</p>
+        <table class="table table-dark table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Function</th>
+            <th scope="col">Next</th>
+            <th scope="col">Current Value</th>
+            <th scope="col">Next Value</th>
+          </tr>
+          </thead>
+          <tbody id="tblrou"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="card text-white text-center border-light bg-dark mb-3">
+      <div class="card-body">
+        <h5 class="card-title">List of Sensors
+        </h5>
+        <p class="card-text">Add more sensors</p>
+        <table class="table table-dark table-hover">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Status</th>
+          </tr>
+          </thead>
+          <tbody id="tblsen"></tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- modal functions-->
+<div class="modal fade" id="modalFunction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Functions</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/user/addfunction" method="post">
+      <div class="modal-body">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Type</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>Choose Type...</option>
+              <option value="1">Binary</option>
+              <option value="2">Analog</option>
+              <option value="3">Discrete</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="name" required placeholder="Simple name" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="code" required  placeholder="Unique code" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Optional descriptions</label>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="SubFun">Save changes</button>
+        </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- modal Routine-->
+<div class="modal fade" id="modalRoutine" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Routine</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/user/addRoutine" method="post">
+      <div class="modal-body">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="name" required placeholder="Simple name" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">?</span>
+            <input type="text" class="form-control" name="code" required  placeholder="Unique code" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="function_code" required  placeholder="@Function code" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class='mb-3 input-group'>
+            <span class="input-group-text" id="basic-addon3">Start from</span>
+            <input type='text' class="form-control" name="start" id='period'/>
+          </div>
+
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="days" placeholder="Days..." required id="basic-url" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" name="hours" placeholder="Hours.." required id="basic-url" aria-describedby="basic-addon3">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Optional descriptions</label>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="SubRou">Save changes</button>
+        </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- modal Sensors-->
+<div class="modal fade" id="modalSensor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Sensors</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/user/addsensor" method="post">
+      <div class="modal-body">
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Type</label>
+            <select class="form-select" id="inputGroupSelect01">
+              <option selected>Choose Type...</option>
+              <option value="1">Binary</option>
+              <option value="2">Analog</option>
+              <option value="3">Discrete</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="name" required placeholder="Simple name" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input type="text" class="form-control" name="code" required  placeholder="Unique code" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Optional descriptions</label>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="SubSen">Save changes</button>
+        </div>
+        </form>
+    </div>
+  </div>
+</div>
+<%- include('../views/Template/footer'); %>
+</div>
+
+</body>
+</html>
+
+
+<script type="text/javascript">
+getRows = (f)=>{
+  return `<tr>
+      <th scope="row">@${f.code}</th>
+      <td>${f.name}</td>
+      <td>${f.type}</td>
+      <td>Active</td>
+    </tr>`
+}
+getRowsR = (f)=>{
+  return `<tr>
+      <th scope="col">@${f.code}</th>
+      <th scope="col">${f.name}</th>
+      <th scope="col">${f.function}</th>
+      <th scope="col">${f.next_time}</th>
+      <th scope="col">${f.current_value}</th>
+      <th scope="col">${f.next_value}</th>
+    </tr>`
+}
+
+getRowsS = (f)=>{
+  return `<tr>
+      <th scope="row">@${f.code}</th>
+      <td>${f.name}</td>
+      <td>${f.type}</td>
+      <td>Active</td>
+    </tr>`
+}
+
+addFunctionsItem = ()=>{
+  $.getJSON('/user/getFunctions',(data)=>{
+    var html = "";
+    if(data){
+      data.forEach((f) => {html += getRows(f);})
+      $('#tblfun').html(html);
+    }});
+}
+
+addRoutinesItem = ()=>{
+  $.getJSON('/user/getRoutine',(data)=>{
+    var html = "";
+    if(data){
+      data.forEach((f) => {html += getRowsR(f);})
+      $('#tblrou').html(html);
+    }});
+}
+
+addSensorsItem = ()=>{
+  $.getJSON('/user/getSensors',(data)=>{
+    var html = "";
+    if(data){
+      data.forEach((f) => {html += getRowsS(f);})
+      $('#tblsen').html(html);
+    }});
+}
+
+$(function(){
+  addFunctionsItem();
+  addRoutinesItem();
+  addSensorsItem();
+
+  $('#period').datetimepicker();
+  //$('#period').on('dp.update',(date,old)=> {console.log(e.date.format("DD MMM YY"))})
+  $('#period').data("DateTimePicker").viewDate()
+  $('#SubFun').click(()=> addFunctionsItem())
+  $('#SubRou').click(()=> addRoutinesItem())
+  $('#SubSen').click(()=> addSensorsItem())
+  /*$.getJSON('getRoutine',(data)=>{})
+  $.getJSON('getPipe',(data)=>{})*/
+  /*$('#Functions').click(()=>{
+    $('#content').load('/settings/function')
+  })*/
+
+})
+</script>
+
+<script type="text/javascript">
+  ko.bindingHandlers.dateTimePicker = {
+    init: function (element, valueAccessor, allBindingsAccessor) {
+        //initialize datepicker with some optional options
+        var options = allBindingsAccessor().dateTimePickerOptions || {};
+        $(element).datetimepicker(options);
+
+        //when a user changes the date, update the view model
+        ko.utils.registerEventHandler(element, "dp.change", function (event) {
+            var value = valueAccessor();
+            if (ko.isObservable(value)) {
+                if (event.date != null && !(event.date instanceof Date)) {
+                    value(event.date.toDate());
+                } else {
+                    value(event.date);
+                }
+            }
+        });
+
+        ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+            var picker = $(element).data("DateTimePicker");
+            if (picker) {
+                picker.destroy();
+            }
+        });
+    },
+    update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+
+        var picker = $(element).data("DateTimePicker");
+        //when the view model is updated, update the widget
+        if (picker) {
+            var koDate = ko.utils.unwrapObservable(valueAccessor());
+
+            //in case return from server datetime i am get in this form for example /Date(93989393)/ then fomat this
+            koDate = (typeof (koDate) !== 'object') ? new Date(parseFloat(koDate.replace(/[^0-9]/g, ''))) : koDate;
+
+            picker.date(koDate);
+        }
+    }
+};
+</script>

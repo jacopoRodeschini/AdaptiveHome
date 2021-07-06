@@ -1,0 +1,87 @@
+<html lang="en" class="h-100">
+<head>
+    <%- include('../views/Template/head'); %>
+    <!-- Custom styles for this template -->
+    <link href="./views/home.css" rel="stylesheet">
+
+<meta name="theme-color" content="#7952b3">
+</head>
+
+<body class="d-flex h-100 text-white bg-dark">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <%- include('../views/Template/header'); %>
+
+  <div class="row">
+    <div class="col">
+      <div class="border-light card bg-dark text-white">
+        <h5 class="card-title text-center">Stat</h5>
+        <ul class="text-white bg-dark list-group">
+          <li class="border-light text-white bg-dark list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">TotalAccess</div>
+              last access <code id="LastAccess">toDay</code>
+            </div>
+            <span class="badge bg-primary rounded-pill" id="totAccess">14</span>
+          </li>
+          <li class="border-light text-white bg-dark list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Total Request Function</div>
+              reqest per hours <code id="thrFun">12 req/h</code>
+            </div>
+            <span class="badge bg-primary rounded-pill" id="totFun">14</span>
+          </li>
+          <li class="border-light text-white bg-dark list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Total Request Pipe</div>
+              reqest per minutes <code id="thrPipe">12 req/min</code>
+            </div>
+            <span class="badge bg-primary rounded-pill" id="totPipe">14</span>
+          </li>
+          <li class="border-light text-white bg-dark list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+              <div class="fw-bold">Total Warning</div>
+              total warning list
+            </div>
+            <span class="badge bg-primary rounded-pill" id="totWar">14</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card bg-dark text-white border-light">
+        <h5 class="card-title text-center">Account Info</h5>
+        <ul class="list-group list-group-flush">
+          <li class="text-white bg-dark list-group-item">API: <mark id="api"></mark></li>
+          <li class="text-white bg-dark list-group-item"></li>
+          <li class="text-white bg-dark list-group-item"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../views/Template/footer'); %>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+  getInfoAccount = () =>{
+    $.getJSON('/user/getInfoAccount',(data)=>{
+      if(data){
+        $('#api').text(data.apiKey);
+        $('#LastAccess').text("toDay");
+        $('#totAccess').text(23);
+        $('#thrFun').text(data.functionStat.request_min);
+        $('#totFun').text(data.functionStat.count);
+        $('#thrPipe').text(data.pipeStrat.request_min);
+        $('#totPipe').text(data.pipeStrat.count);
+        $('#totWar').text(0);
+      }
+    })
+  }
+
+  $(function(){
+    getInfoAccount()
+  })
+
+</script>
